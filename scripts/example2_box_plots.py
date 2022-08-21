@@ -17,7 +17,9 @@ modifier.create_category(category_name)
 df = modifier.get_df()
 
 saver = utils.Saver()
-saver.init_folder("../output/BoxPlots")
+folder_name = "../output/BoxPlots"
+saver.init_folder(folder_name)
 
 plotter = utils.Plotter(saver)
-plotter.box_plot(df, "Puzzle Id", category_name)
+plotter.box_plot(df, "Puzzle ID", category_name)
+print("Box plots saved in {}".format(folder_name))
