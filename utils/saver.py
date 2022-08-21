@@ -6,12 +6,10 @@ import matplotlib.pyplot as plt
 
 class Saver:
 
-    # class variables
     directory_path = ""
     file_path = ""
 
     # save options
-    folder_rw_option = "a"  # a = does not remove existing folder, w = removes
     file_rw_option = "w"  # overwrites existing file each time init method is called
     data_rw_option = "a"  # appends to existing file each time save method is called
 
@@ -34,7 +32,6 @@ class Saver:
     def create_folder(self, folder: str) -> None:
         if os.path.exists(folder):
             return
-            # shutil.rmtree(folder)
         os.makedirs(folder)
 
     def init(self, file: str) -> None:

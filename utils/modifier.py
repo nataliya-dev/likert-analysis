@@ -16,7 +16,7 @@ class Modifier:
         return copy.deepcopy(self.df)
 
     def set_criteria(self, col_name: str, grp_ids: list) -> None:
-        self.col_name = col_name.upper()
+        self.col_name = col_name
         self.grp_ids = grp_ids
 
     def categorise(self, row: pd.DataFrame) -> int:
@@ -27,9 +27,7 @@ class Modifier:
     def create_category(self, new_col_name: str) -> None:
         self.df[new_col_name] = self.df.apply(
             lambda row: self.categorise(row), axis=1)
-        self.df.columns = self.df.columns.str.upper()
 
     def select(self, col_name: str, vals: list) -> None:
-        col_name = col_name.upper()
         ousted = self.df.index[~self.df[col_name].isin(vals)]
         self.df.drop(ousted, inplace=True)

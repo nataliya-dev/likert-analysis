@@ -19,7 +19,6 @@ class Reader:
         f_path = os.path.join(self.path, self.file)
         df = pd.read_csv(f_path)
         df.name = f_path
-        df.columns = df.columns.str.upper()
         self.df = df
 
     def get_df(self) -> pd.DataFrame:

@@ -25,8 +25,6 @@ class Analyzer:
             is_significant = 0
             if(pval <= 0.05):
                 is_significant = 1
-            elif(pval == 0):
-                pval = nan
 
             save_line = []
             save_line.append(qn)

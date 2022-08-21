@@ -24,8 +24,6 @@ class Plotter:
     def box_plot(self, df: pd.DataFrame, x_col: str, grp_col: str = "") -> None:
         num_cols = len(df.columns)
         self.init_figure()
-        x_col = x_col.upper()
-        grp_col = grp_col.upper()
         for qn_num in range(num_cols):
             qn_str = df.columns[qn_num]
             if grp_col == "":
@@ -43,7 +41,6 @@ class Plotter:
     def histogram(self, df: pd.DataFrame, grp_col: str) -> None:
         self.init_figure()
         num_cols = len(df.columns)
-        grp_col = grp_col.upper()
         for qn_num in range(num_cols):
             qn = df.columns[qn_num]
             try:
