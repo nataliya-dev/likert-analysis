@@ -18,6 +18,7 @@ class Analyzer:
 
             pval = 1.0
             try:
+                #fvalue, pval = stats.f_oneway(group1_qn_ans, group2_qn_ans)
                 pval = self.ttest(group1_qn_ans, group2_qn_ans)
             except:
                 pass

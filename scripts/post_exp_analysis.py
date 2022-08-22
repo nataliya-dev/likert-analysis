@@ -42,4 +42,8 @@ saver.init_file(path, file)
 analyzer = utils.Analyzer(saver)
 grp1 = df.loc[df[category_name] == 0]
 grp2 = df.loc[df[category_name] == 1]
+
+print("Num data points in group 1: ", len(grp1))
+print("Num data points in group 2: ", len(grp2))
+
 analyzer.two_group_ttest(grp1, grp2)
