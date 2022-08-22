@@ -1,8 +1,5 @@
-from cmath import nan
 from scipy import stats
 import pandas as pd
-
-from utils.saver import Saver
 
 
 class Analyzer:
