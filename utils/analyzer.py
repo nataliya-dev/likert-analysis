@@ -1,6 +1,7 @@
 from cmath import nan
 from scipy import stats
 import pandas as pd
+import researchpy as rp
 
 from utils.saver import Saver
 
@@ -20,11 +21,13 @@ class Analyzer:
             try:
                 #fvalue, pval = stats.f_oneway(group1_qn_ans, group2_qn_ans)
                 pval = self.ttest(group1_qn_ans, group2_qn_ans)
+                summary, results = rp.ttest(group1_qn_ans, group2_qn_ans)
+                print(summary)
             except:
                 pass
 
             is_significant = 0
-            if(pval <= 0.05):
+            if (pval <= 0.05):
                 is_significant = 1
 
             save_line = []
